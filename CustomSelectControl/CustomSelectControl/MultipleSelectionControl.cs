@@ -30,7 +30,17 @@ namespace CustomSelectControl
 
         public List<object> SelectedItems
         {
-            get { return (List<object>)lbSelected.DataSource; }
+            set
+            {
+                foreach (var item in value)
+                {
+                    lbSelected.Items.Add(item);
+                }
+            }
+            get
+            {
+                return lbSelected.Items.Cast<object>().ToList();
+            }
         }
 
         private void btnAddAll_Click(object sender, EventArgs e)
@@ -249,6 +259,7 @@ namespace CustomSelectControl
         {
             if (target != lbAvailable)
             {
+                // Items collection cannot be modified when the DataSource property is set.
                 target.Items.Remove(item);
             }
             //target.Items.Remove(item); // can't use this with a DataSource. waaaah!

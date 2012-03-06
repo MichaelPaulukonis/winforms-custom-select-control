@@ -23,6 +23,8 @@ namespace Tester
 
         public void DisplayEditor(object sender, EventArgs e)
         {
+            // DAMMIT! we still have implementation details exposed. WTF!!!!
+            // TODO: fix this
             var t = (Thing)((ListBox)sender).SelectedItem;
 
             if (!_activeEditors.Contains(t)) // only allow one editing instance
