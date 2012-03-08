@@ -153,7 +153,10 @@ namespace CustomSelectControl
         // so explicitly check which is which
         private void AddRemoveItem(ListBox source, ListBox target)
         {
-            AddRemoveItem(source, target, source.Items[source.SelectedIndex]);
+            if (source.SelectedIndex >= 0)
+            {
+                AddRemoveItem(source, target, source.Items[source.SelectedIndex]);
+            }
         }
 
         private new void Move(ListBox lstBox, int iOffset)
