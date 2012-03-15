@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Rules = new CustomSelectControl.MultipleSelectionControl();
             this.SuspendLayout();
             // 
             // Rules
             // 
-            this.Rules.Location = new System.Drawing.Point(12, -5);
+            this.Rules.AllowMultipleItems = true;
+            this.Rules.DisplayFilter = true;
+            this.Rules.Location = new System.Drawing.Point(3, 3);
             this.Rules.Name = "Rules";
-            this.Rules.Size = new System.Drawing.Size(389, 255);
+            this.Rules.SelectedItems = ((System.Collections.Generic.List<object>)(resources.GetObject("Rules.SelectedItems")));
+            this.Rules.Size = new System.Drawing.Size(363, 233);
             this.Rules.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 259);
+            this.ClientSize = new System.Drawing.Size(373, 240);
             this.Controls.Add(this.Rules);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -53,6 +57,7 @@
         #endregion
 
         private CustomSelectControl.MultipleSelectionControl Rules;
+
     }
 }
 
