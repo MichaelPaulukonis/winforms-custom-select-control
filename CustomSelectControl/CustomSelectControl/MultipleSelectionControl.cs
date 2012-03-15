@@ -43,6 +43,20 @@ namespace CustomSelectControl
             }
         }
 
+        private bool _df = true;
+
+        public bool DisplayFilter
+        {
+            get { return _df; }
+            set
+            {
+                _df = value;
+                //lblFilter.Visible = _df;
+                //txtFilter.Visible = _df;
+                panelFilter.Visible = _df;
+            }
+        }
+
         private void btnAddAll_Click(object sender, EventArgs e)
         {
             AddRemoveAll(lbAvailable, lbSelected);
