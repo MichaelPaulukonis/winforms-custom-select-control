@@ -8,9 +8,9 @@ namespace CustomSelectControl
     // inspired by http://www.codeproject.com/Articles/8219/Enhanced-List-Box-Control
     // and http://www.codeproject.com/Articles/36624/Multiple-Selection-Control
     // with help from the fine folks @ http://stackoverflow.com/questions/9505403/where-can-i-find-this-net-winforms-control-if-it-exists
-    public partial class NewControlBuild : UserControl
+    public partial class MultipleSelectionControl_original : UserControl
     {
-        public NewControlBuild()
+        public MultipleSelectionControl_original()
         {
             InitializeComponent();
         }
@@ -208,13 +208,13 @@ namespace CustomSelectControl
             }
         }
 
-        public NewControlBuild SetAvailableLabel(string label)
+        public MultipleSelectionControl_original SetAvailableLabel(string label)
         {
             lblAvailable.Text = label;
             return this;
         }
 
-        public NewControlBuild SetSelectedLabel(string label)
+        public MultipleSelectionControl_original SetSelectedLabel(string label)
         {
             lblSelected.Text = label;
             return this;

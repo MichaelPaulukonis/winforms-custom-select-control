@@ -36,10 +36,11 @@
             // 
             this.Rules.AllowMultipleItems = true;
             this.Rules.DisplayFilter = true;
-            this.Rules.Location = new System.Drawing.Point(3, 3);
+            this.Rules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Rules.Location = new System.Drawing.Point(0, 0);
             this.Rules.Name = "Rules";
             this.Rules.SelectedItems = ((System.Collections.Generic.List<object>)(resources.GetObject("Rules.SelectedItems")));
-            this.Rules.Size = new System.Drawing.Size(363, 233);
+            this.Rules.Size = new System.Drawing.Size(373, 240);
             this.Rules.TabIndex = 0;
             // 
             // Form1
