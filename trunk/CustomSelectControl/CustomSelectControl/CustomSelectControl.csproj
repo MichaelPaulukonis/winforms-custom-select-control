@@ -43,27 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MultipleSelectionControl_original.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MultipleSelectionControl_original.Designer.cs">
+      <DependentUpon>MultipleSelectionControl_original.cs</DependentUpon>
+    </Compile>
     <Compile Include="MultipleSelectionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MultipleSelectionControl.Designer.cs">
       <DependentUpon>MultipleSelectionControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewControlBuild.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="NewControlBuild.Designer.cs">
-      <DependentUpon>NewControlBuild.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MultipleSelectionControl_original.resx">
+      <DependentUpon>MultipleSelectionControl_original.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MultipleSelectionControl.resx">
       <DependentUpon>MultipleSelectionControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewControlBuild.resx">
-      <DependentUpon>NewControlBuild.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
