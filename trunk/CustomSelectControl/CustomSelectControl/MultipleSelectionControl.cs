@@ -179,7 +179,7 @@ namespace CustomSelectControl
             {
                 var sel = lstBox.SelectedItem;
                 var originalLoc = lstBox.SelectedIndex;
-                // don't move past first index, last index, and ignore if the same (WAT?!?!)
+                // don't move past first index, last index, and ignore if the same
                 var newLoc = originalLoc + iOffset;
                 if (newLoc >= 0 && newLoc <= lstBox.Items.Count - 1 && newLoc != originalLoc)
                 {

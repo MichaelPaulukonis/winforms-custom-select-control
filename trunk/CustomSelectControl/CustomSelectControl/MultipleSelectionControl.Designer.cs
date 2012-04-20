@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.FilterAndBody = new System.Windows.Forms.TableLayoutPanel();
+            this.panelFilter = new System.Windows.Forms.Panel();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.lblFilter = new System.Windows.Forms.Label();
             this.splitAvailableSelected = new System.Windows.Forms.SplitContainer();
             this.tableLeftSplit = new System.Windows.Forms.TableLayoutPanel();
             this.tableLeftRight = new System.Windows.Forms.TableLayoutPanel();
@@ -48,10 +51,8 @@
             this.tableSelected = new System.Windows.Forms.TableLayoutPanel();
             this.lbSelected = new System.Windows.Forms.ListBox();
             this.lblSelected = new System.Windows.Forms.Label();
-            this.panelFilter = new System.Windows.Forms.Panel();
-            this.txtFilter = new System.Windows.Forms.TextBox();
-            this.lblFilter = new System.Windows.Forms.Label();
             this.FilterAndBody.SuspendLayout();
+            this.panelFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitAvailableSelected)).BeginInit();
             this.splitAvailableSelected.Panel1.SuspendLayout();
             this.splitAvailableSelected.Panel2.SuspendLayout();
@@ -64,7 +65,6 @@
             this.tableUpDown.SuspendLayout();
             this.panelUpDown.SuspendLayout();
             this.tableSelected.SuspendLayout();
-            this.panelFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // FilterAndBody
@@ -82,6 +82,33 @@
             this.FilterAndBody.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.89637F));
             this.FilterAndBody.Size = new System.Drawing.Size(447, 386);
             this.FilterAndBody.TabIndex = 0;
+            // 
+            // panelFilter
+            // 
+            this.panelFilter.Controls.Add(this.txtFilter);
+            this.panelFilter.Controls.Add(this.lblFilter);
+            this.panelFilter.Location = new System.Drawing.Point(0, 0);
+            this.panelFilter.Margin = new System.Windows.Forms.Padding(0);
+            this.panelFilter.Name = "panelFilter";
+            this.panelFilter.Size = new System.Drawing.Size(173, 33);
+            this.panelFilter.TabIndex = 1;
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(35, 3);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(118, 20);
+            this.txtFilter.TabIndex = 10;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Location = new System.Drawing.Point(6, 7);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(26, 13);
+            this.lblFilter.TabIndex = 11;
+            this.lblFilter.Text = "filter";
             // 
             // splitAvailableSelected
             // 
@@ -154,6 +181,7 @@
             this.btnAddAll.TabIndex = 2;
             this.btnAddAll.Text = ">>";
             this.btnAddAll.UseVisualStyleBackColor = true;
+            this.btnAddAll.Click += new System.EventHandler(this.btnAddAll_Click);
             // 
             // btnAddItem
             // 
@@ -163,6 +191,7 @@
             this.btnAddItem.TabIndex = 3;
             this.btnAddItem.Text = ">";
             this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // btnRemoveItem
             // 
@@ -172,6 +201,7 @@
             this.btnRemoveItem.TabIndex = 4;
             this.btnRemoveItem.Text = "<";
             this.btnRemoveItem.UseVisualStyleBackColor = true;
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
             // btnRemoveAll
             // 
@@ -181,6 +211,7 @@
             this.btnRemoveAll.TabIndex = 5;
             this.btnRemoveAll.Text = "<<";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
+            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
             // 
             // tableAvailable
             // 
@@ -208,6 +239,7 @@
             this.lbAvailable.Name = "lbAvailable";
             this.lbAvailable.Size = new System.Drawing.Size(172, 327);
             this.lbAvailable.TabIndex = 14;
+            this.lbAvailable.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbAvailable_MouseDoubleClick);
             // 
             // lblAvailable
             // 
@@ -269,6 +301,7 @@
             this.btnMoveUp.TabIndex = 6;
             this.btnMoveUp.Text = "/\\";
             this.btnMoveUp.UseVisualStyleBackColor = true;
+            this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
             // 
             // btnMoveDown
             // 
@@ -278,6 +311,7 @@
             this.btnMoveDown.TabIndex = 7;
             this.btnMoveDown.Text = "\\/";
             this.btnMoveDown.UseVisualStyleBackColor = true;
+            this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
             // 
             // tableSelected
             // 
@@ -316,32 +350,6 @@
             this.lblSelected.TabIndex = 14;
             this.lblSelected.Text = "Selected";
             // 
-            // panelFilter
-            // 
-            this.panelFilter.Controls.Add(this.txtFilter);
-            this.panelFilter.Controls.Add(this.lblFilter);
-            this.panelFilter.Location = new System.Drawing.Point(0, 0);
-            this.panelFilter.Margin = new System.Windows.Forms.Padding(0);
-            this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(173, 33);
-            this.panelFilter.TabIndex = 1;
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Location = new System.Drawing.Point(35, 3);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(118, 20);
-            this.txtFilter.TabIndex = 10;
-            // 
-            // lblFilter
-            // 
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Location = new System.Drawing.Point(6, 7);
-            this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(26, 13);
-            this.lblFilter.TabIndex = 11;
-            this.lblFilter.Text = "filter";
-            // 
             // MultipleSelectionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,6 +358,8 @@
             this.Name = "MultipleSelectionControl";
             this.Size = new System.Drawing.Size(447, 386);
             this.FilterAndBody.ResumeLayout(false);
+            this.panelFilter.ResumeLayout(false);
+            this.panelFilter.PerformLayout();
             this.splitAvailableSelected.Panel1.ResumeLayout(false);
             this.splitAvailableSelected.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitAvailableSelected)).EndInit();
@@ -364,8 +374,6 @@
             this.panelUpDown.ResumeLayout(false);
             this.tableSelected.ResumeLayout(false);
             this.tableSelected.PerformLayout();
-            this.panelFilter.ResumeLayout(false);
-            this.panelFilter.PerformLayout();
             this.ResumeLayout(false);
 
         }
