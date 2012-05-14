@@ -16,6 +16,14 @@ namespace Tester
 
             Rules.AvailableItems = GetList().Cast<object>().ToList();
 
+            // this fails
+            Rules.SelectedItems.Add(new Thing(99, "99"));
+
+            // this works
+            var i = Rules.SelectedItems;
+            i.Add(new Thing(99, "99"));
+            Rules.SelectedItems = i;
+
             Rules.AllowMultipleItems = true;
         }
 
