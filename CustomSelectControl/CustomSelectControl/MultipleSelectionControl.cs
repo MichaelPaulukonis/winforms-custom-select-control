@@ -28,6 +28,9 @@ namespace CustomSelectControl
             }
         }
 
+        // TODO: an add to this list doesn't ACTUALLY add to the control
+        // it adds to a COPY of the list. ???
+        // a publicly-exposed method to add items does not currently exist as a result...
         public List<object> SelectedItems
         {
             set
